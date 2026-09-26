@@ -19,6 +19,21 @@ pipeline {
       }
     }
 
+    stage('Quality checks') {
+      parallel {
+        stage('Lint') {
+          steps {
+            sh 'echo "running linter"'
+          }
+        }
+        stage('Unit Test') {
+          steps {
+            sh 'echo "running unit test"'
+          }
+        }
+      }
+    }
+
     stage('Test') {
       steps {
         sh 'echo "Running tests here"'
