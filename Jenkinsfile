@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'git log -l'
+        sh 'git log -1'
       }
     }
 
