@@ -15,7 +15,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'echo building $APP_NAME for $BUILD_ENV'
+        sh 'docker --version'
+        sh 'docker ps'
       }
     }
 
