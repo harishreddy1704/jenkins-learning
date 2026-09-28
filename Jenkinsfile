@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -t jenkins-learning-app:latest'
+        sh 'docker build -t jenkins-learning-app:latest .'
         
       }
     }
