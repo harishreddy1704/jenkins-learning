@@ -15,8 +15,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker --version'
-        sh 'docker ps'
+        sh 'docker build -t jenkins-learning-app:latest'
+        
       }
     }
 
@@ -43,7 +43,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh "echo deploying ${APP_NAME} to ${BUILD_ENV}"
+        sh 'docker run --rm jenkins-learning-app:latest'
       }
     }
   }
